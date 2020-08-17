@@ -1,7 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-import time
 import random
+import eel
+
+eel.init('Frontend')
 
 class InstagramBot:
 
@@ -13,7 +15,7 @@ class InstagramBot:
     def login(self):
         bot=self.bot
         bot.get('https://www.instagram.com/accounts/login/')
-        time.sleep(random.choice([5, 6, 7, 8, 9]))
+        eel.sleep(random.choice([5, 6, 7, 8, 9]))
         username_input=bot.find_element_by_name('username')
         password_input=bot.find_element_by_name('password')
         username_input.clear()
@@ -22,41 +24,74 @@ class InstagramBot:
         password_input.send_keys(self.password)
         password_input.send_keys(Keys.RETURN)
         print("ALMOST THERE\n")
-        time.sleep(5)
+        eel.sleep(5)
+        try:
+            loginstatus =  bot.find_element_by_id('slfErrorAlert')
+            return 0
+        except:
+            pass
         try:
             NotNowButton = bot.find_element_by_css_selector('body > div.RnEpo.Yx5HN > div > div > div.mt3GC > button.aOOlW.HoLwm')
             NotNowButton.click()
-            print("SUCCESSFULLY LOGGED IN\n")
         except:
             pass
-        time.sleep(5)
+        return 1
+        
 
     def userSearch(self,user):
         print("SEARCHING USER\n")
         bot = self.bot
         bot.get('https://www.instagram.com/' + user + '/')
-        time.sleep(5)
+        eel.sleep(5)
         
     def sendMessage(self,message):
         bot = self.bot
-        messageButton = bot.find_element_by_css_selector('#react-root > section > main > div > header > section > div.nZSzR > div._862NM > div > button')
-        messageButton.click()
-        time.sleep(5)
+        try:
+            messageButton = bot.find_element_by_css_selector('#react-root > section > main > div > header > section > div.nZSzR > div._862NM > div > button')
+            messageButton.click()
+            eel.sleep(5)
+        except:
+            return 0
         try:
             NotNowButton = bot.find_element_by_css_selector('body > div.RnEpo.Yx5HN > div > div > div > div.mt3GC > button.aOOlW.bIiDR')
             NotNowButton.click()
         except:
             pass
-        time.sleep(5)
-        messageArea = bot.find_element_by_css_selector('#react-root > section > div > div.Igw0E.IwRSH.eGOV_._4EzTm > div > div > div.DPiy6.Igw0E.IwRSH.eGOV_.vwCYk > div.uueGX > div > div.Igw0E.IwRSH.eGOV_._4EzTm > div > div > div.Igw0E.IwRSH.eGOV_.vwCYk.ItkAi > textarea')
-        messageArea.send_keys(message)
-        time.sleep(5)
-        messageArea.send_keys(Keys.RETURN)
-        time.sleep(5)
+        eel.sleep(1)
+        try:
+            messageArea = bot.find_element_by_css_selector('#react-root > section > div > div.Igw0E.IwRSH.eGOV_._4EzTm > div > div > div.DPiy6.Igw0E.IwRSH.eGOV_.vwCYk > div.uueGX > div > div.Igw0E.IwRSH.eGOV_._4EzTm > div > div > div.Igw0E.IwRSH.eGOV_.vwCYk.ItkAi > textarea')
+            messageArea.send_keys(message)
+            messageArea.send_keys(Keys.RETURN)
+            eel.sleep(2)
+        except:
+            return 0
+        return 1
     
 #Main Function
+@eel.expose
+def runBot(username, password,usernames,message):
+    eel.sleep(3)
+    Insta = InstagramBot(username,password)
+    status = Insta.login()
+    if(status==0):
+        eel.status("Login Not Successfull")
+        return "Login Not Successfull"
+    userlist = list(usernames.split(" "))
+    eel.status("Sending Messages")
+    ec=0
+    sc=0
+    for i in userlist:
+        Insta.userSearch(i)
+        x=Insta.sendMessage(message)
+        if(x==0):
+            ec=ec+1
+        else:
+            sc=sc+1
+        print("Messages Sent = ")
+        print(sc)
+        print("Messages ERROR = ")
+        print(ec)
+        eel.messageStatus(sc,ec)
+    eel.status("done")
 
-Insta = InstagramBot('','')
-Insta.login()
-Insta.userSearch('')
-Insta.sendMessage('')
+eel.start('index.html',size=(1100,720),port=8085)

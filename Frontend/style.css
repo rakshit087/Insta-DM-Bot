@@ -15,7 +15,7 @@ body{
 }
 
 a{
-    color: #d80039;
+    color: white;
     text-decoration: none;
 }
 
@@ -62,7 +62,7 @@ button{
     color:#d80039;
     margin:auto;
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: center;
     height:20%;
     
 }
@@ -78,6 +78,7 @@ button{
     bottom: 0;
     width:35%;
     background-color:#3a3a3a;
+    
 }
 
 .light{
@@ -87,7 +88,7 @@ button{
     bottom: 0;
     width:65%;
     background-color:#D5E5F2;
-    animation: ripple2 2s 1 left;
+
 }
 
 .footer{
@@ -151,26 +152,45 @@ button{
     border-color: #d80039;
   }
 
-@keyframes ripple { 
-    from { 
-        width:35%
-    } 
+.status{
+    display: flex;
+    align-items:center;
+    width:70%;
+    height:65%;
+    background-color: #3a3a3a;
+    border-radius: 5%;
+    color: #d80039;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
 
-    to { 
-        width:100%;
-    } 
-} 
+.status h1{
+    font-size: 50px;
+}
 
-@keyframes ripple2 { 
-    from { 
-        width:65%
-    } 
+.status h2{
+    color: white;
+    text-align:center;
+    line-height:2;
+}
 
-    to { 
-        width:0%;
-    } 
-} 
+.light2
+{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
 
-.full{
-    background-color: red;
+.sr{
+    width:100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top:5%;
+}
+
+.contact
+{
+    display: flex;
+    justify-content:space-between;
+    width:40%;
 }
