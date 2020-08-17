@@ -1,0 +1,176 @@
+/* #00102c
+#f8f8f8
+D5E5F2 */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat;
+}
+
+body{
+    display: flex;
+    width: 100%;
+    height: 100%
+}
+
+a{
+    color: #d80039;
+    text-decoration: none;
+}
+
+h5{
+    font-size:14px;
+    font-family:Montserrat;
+    font-weight:300;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:flex-end;
+    height: 100%;
+}
+
+input{
+    font-size:16px;
+}
+
+button{
+    margin-top:2.5%;
+    width: 125px;
+    height: 45px;
+    background: #d80039;
+    border: solid #d80039;
+    color: white;
+    border-radius: 100px;
+    font-size: 20px;
+    margin-right:16%;
+    position: relative; 
+    overflow: hidden; 
+    box-shadow: 6px 7px 40px -4px  rgba(0, 0, 0, 0.2); 
+  }
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #d80039;
+    opacity: 1; /* Firefox */
+  }
+  
+.title{
+    display:flex;
+    color:#d80039;
+    margin:auto;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height:20%;
+    
+}
+
+.icon{
+    margin-left: 10%;
+    margin-right: 7%;
+}
+
+.dark{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width:35%;
+    background-color:#3a3a3a;
+}
+
+.light{
+    position: absolute;
+    left:35%;
+    top: 0;
+    bottom: 0;
+    width:65%;
+    background-color:#D5E5F2;
+    animation: ripple2 2s 1 left;
+}
+
+.footer{
+    display: flex;
+    justify-content:center;
+    position: relative;
+    top:75%;
+    color:white;
+}
+
+.instalogin{
+    display: flex;
+    width:100%;
+    justify-content:center;
+}
+
+.message{
+    height:200px;
+    font-size:16px;
+}
+
+.inputsmall{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 2.5% 2.5%;
+    text-align: center;
+    border: 2px solid #fb0043;
+    padding: 14px 10px;
+    width: 30%;
+    outline: none;
+    color: #d80039;
+    border-radius: 24px;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+  }
+  
+.inputsmall:focus {
+    width: 280px;
+    border-color: #d80039;
+  }
+
+.inputbig{
+    border: 0;
+    margin: 2.5% 2.5%;
+    background: none;
+    display: block;
+    text-align: center;
+    border: 2px solid #fb0043;
+    padding: 14px 10px;
+    width: 67.5%;
+    outline: none;
+    color: #d80039;
+    border-radius: 24px;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+  }
+  
+.inputbig:focus {
+    width: 75%;
+    border-color: #d80039;
+  }
+
+@keyframes ripple { 
+    from { 
+        width:35%
+    } 
+
+    to { 
+        width:100%;
+    } 
+} 
+
+@keyframes ripple2 { 
+    from { 
+        width:65%
+    } 
+
+    to { 
+        width:0%;
+    } 
+} 
+
+.full{
+    background-color: red;
+}
