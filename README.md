@@ -24,3 +24,6 @@ A simple bot to send a Message to Multiple User Accounts.
 6) Use jquery to reduce the space.
 5) Optimize the code to run it faster.
 7) Add auto updates to Chrome Driver.
+
+Executable File For Direct Usage
+https://bit.ly/2EBPeOs
