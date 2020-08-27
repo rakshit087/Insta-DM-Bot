@@ -29,7 +29,7 @@ function status(x)
     }
     else if(x=="done")
     {
-        document.getElementById('status').innerHTML='<h2 id="status">Done! <br> Thanks for Using</h2><h1>Contact Me :)</h1><div class="contact"><a href="https://www.linkedin.com/in/rakshit-arora-1470b2163/"><img src="https://img.icons8.com/dusk/60/000000/linkedin.png"/></a><a href="https://www.instagram.com/im.rakshit/"><img src="https://img.icons8.com/dusk/60/000000/instagram-new.png"/></a><a href="https://twitter.com/rakshit087"><img src="https://img.icons8.com/dusk/60/000000/twitter.png"/></a></div>';
+        document.querySelector('.light').innerHTML=' <div class="status"><h1>STATUS</h1><h2 id="status">Done! <br> Thanks for Using</h2><h1>Contact Me :)</h1><div class="contact"><a href="https://www.linkedin.com/in/rakshit-arora-1470b2163/"><img src="https://img.icons8.com/dusk/60/000000/linkedin.png"/></a><a href="https://www.instagram.com/im.rakshit/"><img src="https://img.icons8.com/dusk/60/000000/instagram-new.png"/></a><a href="https://twitter.com/rakshit087"><img src="https://img.icons8.com/dusk/60/000000/twitter.png"/></a></div></div>'
     }
 }
 
