@@ -68,11 +68,15 @@ class InstagramBot:
             return 0
         return 1
 
-def runBot(username, password, usernames, message):
+if __name__ == '__main__':
+    username = 'your_username'
+    password = 'your_password'
+    message = 'your_message'
+    usernames = 'space seprated usernames'
     Insta = InstagramBot(username, password)
     status = Insta.login()
     if(status == 0):
-        return "Login Not Successfull"
+         print("Login Not Successfull")
     userlist = list(usernames.split(" "))
     ec = 0
     sc = 0
