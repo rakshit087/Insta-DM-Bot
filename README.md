@@ -16,14 +16,6 @@ A simple bot to send a Message to Multiple User Accounts.
 2) Install the dependencies by using Pip
 3) Run the bot.py 
 
-# to-do
+# Update
 
-1) Create a executable to run the app without any dependencies
-2) Make an option to Run it Headless.
-3) Option to Comma Seprate the Inst Accounts.
-6) Use jquery to reduce the space.
-5) Optimize the code to run it faster.
-7) Add auto updates to Chrome Driver.
-
-Executable File For Direct Usage
-https://bit.ly/2EBPeOs
+I am dropping support for the GUI Version, I think CLI is faster and easier to maintain.
