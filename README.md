@@ -8,13 +8,14 @@ A simple bot to send a Message to Multiple User Accounts.
 
 2. pip install selenium.
 
-3. Google Chrome (Version 84.0.4147.125 (Official Build) (64-bit)).
 
 # Usage 
 
 1) Clone The Repo
 2) Install the dependencies by using Pip
-3) Run the bot.py 
+3) Download Chromedriver for your OS and put it where bot-cli is.
+4) Edit bot-cli.py by adding your username, password and message 
+5) Run the bot-cli.py 
 
 # Update
 
