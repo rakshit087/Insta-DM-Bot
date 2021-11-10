@@ -74,19 +74,18 @@ class InstagramBot:
         return 1
 
 if __name__ == '__main__':
-    username = 'your_username'
-    password = 'your_password'
-    message = 'your_message'
-    usernames = 'space seprated usernames'
+    username = input()
+    password = input()
+    message = input()
+    usernames = open('usernames.txt', 'r').readlines()
     pyperclip.copy(message)
     Insta = InstagramBot(username, password)
     status = Insta.login()
     if(status == 0):
          print("Login Not Successfull")
-    userlist = list(usernames.split(" "))
     ec = 0
     sc = 0
-    for i in userlist:
+    for i in usernames:
         Insta.userSearch(i)
         x = Insta.sendMessage(message)
         if(x == 0):
